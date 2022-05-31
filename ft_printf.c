@@ -6,7 +6,7 @@
 /*   By: enunez-n <enunez-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 17:17:09 by enunez-n          #+#    #+#             */
-/*   Updated: 2022/05/31 14:05:21 by enunez-n         ###   ########.fr       */
+/*   Updated: 2022/05/31 18:55:05 by enunez-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,16 @@ void	ft_evaluator(const char conversion, va_list args, int *printlen)
 		printlen[0] += ft_printstring(va_arg(args, char *));
 	else if (conversion == 'p')
 		printlen[0] += ft_printptr(va_arg(args, unsigned long long));
-	else if (conversion == 'i' || conversion == 'd')
-		printlen[0] += ft_printnumber(args);
+	else if (conversion == 'd' || conversion == 'i')
+		printlen[0] += ft_printdec(va_arg(args, int));
+	else if (conversion == 'u')
+		printlen[0] += ft_printudec(va_arg(args, unsigned int));
+	else if (conversion == 'x')
+		printlen[0] += ft_basehexa(va_arg(args, unsigned long long), 0);
+	else if (conversion == 'X')
+		printlen[0] += ft_basehexa(va_arg(args, unsigned long long), 1);
+	else if (conversion == '%')
+		printlen[0] += ft_printchar('%');
 }
 
 int	main(void)
@@ -61,6 +69,20 @@ int	main(void)
 	//Void *
 	printf("Native test: %p \n", ptr);
 	ft_printf("Custom test: %p \n", ptr);
-
+	//Integer or decimal
+	printf("%d\n", printf("Native test: %ld %i \n", -2147483648, 2147483647));
+	printf("%d\n", ft_printf("Custom test: %d %i \n", -2147483648, 2147483647));
+	//Unsigned decimal
+	printf("Native test: %u\n", -10);
+	ft_printf("Custom test: %u \n", -10);
+	//Hexadecimal lowercase
+	printf("Native test: %x\n", 123456);
+	ft_printf("Custom test: %x \n", 123456);
+	//Hexadecimal upercase
+	printf("Native test: %X\n", 123456);
+	ft_printf("Custom test: %X \n", 123456);
+	// % symbol
+	printf("Native test: %% %d\n", 123456);
+	ft_printf("Custom test: %% %d \n", 123456);
 	return (0);
 }
