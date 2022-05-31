@@ -6,7 +6,7 @@
 /*   By: enunez-n <enunez-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 17:17:09 by enunez-n          #+#    #+#             */
-/*   Updated: 2022/05/31 12:19:54 by enunez-n         ###   ########.fr       */
+/*   Updated: 2022/05/31 12:26:19 by enunez-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,12 +43,13 @@ void	ft_evaluator(const char conversion, va_list args, int *printlen)
 	else if (conversion == 'i' || conversion == 'd')
 		printlen[0] += ft_printnumber(args);
 	else if (conversion == 's')
-		printlen[0] += ft_printstring(args);
+		printlen[0] += ft_printstring(va_arg(args, char *));
 }
 
-int	main(void)
+/* int	main(void)
 {
 	printf("%c \n", 'a');
 	ft_printf("Hola %c", 'b');
 	return (0);
 }
+ */
