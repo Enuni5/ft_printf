@@ -6,7 +6,7 @@
 /*   By: enunez-n <enunez-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 18:01:32 by enunez-n          #+#    #+#             */
-/*   Updated: 2022/05/31 12:25:29 by enunez-n         ###   ########.fr       */
+/*   Updated: 2022/05/31 13:07:34 by enunez-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,6 @@ size_t	ft_printstring(char *str);
 size_t	ft_printnumber(va_list args);
 
 // printhexa.c functions:
-
+size_t	basehexa(uintptr_t num, int up);
+size_t	ft_printptr(uintptr_t ptr);
 #endif

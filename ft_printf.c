@@ -6,7 +6,7 @@
 /*   By: enunez-n <enunez-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 17:17:09 by enunez-n          #+#    #+#             */
-/*   Updated: 2022/05/31 12:26:19 by enunez-n         ###   ########.fr       */
+/*   Updated: 2022/05/31 14:05:21 by enunez-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,16 +40,27 @@ void	ft_evaluator(const char conversion, va_list args, int *printlen)
 {
 	if (conversion == 'c')
 		printlen[0] += ft_printchar(va_arg(args, int));
-	else if (conversion == 'i' || conversion == 'd')
-		printlen[0] += ft_printnumber(args);
 	else if (conversion == 's')
 		printlen[0] += ft_printstring(va_arg(args, char *));
+	else if (conversion == 'p')
+		printlen[0] += ft_printptr(va_arg(args, unsigned long long));
+	else if (conversion == 'i' || conversion == 'd')
+		printlen[0] += ft_printnumber(args);
 }
 
-/* int	main(void)
+int	main(void)
 {
-	printf("%c \n", 'a');
-	ft_printf("Hola %c", 'b');
+	int	ptr[1];
+
+	// Single char
+	printf("Native test: %c \n", 'a');
+	ft_printf("Custom test: %c \n", 'a');
+	//String
+	printf("Native test: %s \n", "String");
+	ft_printf("Custom test: %s \n", "String");
+	//Void *
+	printf("Native test: %p \n", ptr);
+	ft_printf("Custom test: %p \n", ptr);
+
 	return (0);
 }
- */
