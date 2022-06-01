@@ -6,7 +6,7 @@
 /*   By: enunez-n <enunez-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 17:17:09 by enunez-n          #+#    #+#             */
-/*   Updated: 2022/05/31 18:55:05 by enunez-n         ###   ########.fr       */
+/*   Updated: 2022/06/01 07:39:53 by enunez-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,14 +49,14 @@ void	ft_evaluator(const char conversion, va_list args, int *printlen)
 	else if (conversion == 'u')
 		printlen[0] += ft_printudec(va_arg(args, unsigned int));
 	else if (conversion == 'x')
-		printlen[0] += ft_basehexa(va_arg(args, unsigned long long), 0);
+		printlen[0] += ft_basehexa(va_arg(args, unsigned int), 0);
 	else if (conversion == 'X')
-		printlen[0] += ft_basehexa(va_arg(args, unsigned long long), 1);
+		printlen[0] += ft_basehexa(va_arg(args, unsigned int), 1);
 	else if (conversion == '%')
 		printlen[0] += ft_printchar('%');
 }
 
-int	main(void)
+/* int	main(void)
 {
 	int	ptr[1];
 
@@ -76,13 +76,13 @@ int	main(void)
 	printf("Native test: %u\n", -10);
 	ft_printf("Custom test: %u \n", -10);
 	//Hexadecimal lowercase
-	printf("Native test: %x\n", 123456);
+	printf("Native test: %lx\n", 123456);
 	ft_printf("Custom test: %x \n", 123456);
 	//Hexadecimal upercase
-	printf("Native test: %X\n", 123456);
+	printf("Native test: %llX\n", 123456);
 	ft_printf("Custom test: %X \n", 123456);
 	// % symbol
 	printf("Native test: %% %d\n", 123456);
 	ft_printf("Custom test: %% %d \n", 123456);
 	return (0);
-}
+} */

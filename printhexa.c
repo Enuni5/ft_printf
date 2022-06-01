@@ -6,7 +6,7 @@
 /*   By: enunez-n <enunez-n@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 11:30:18 by enunez-n          #+#    #+#             */
-/*   Updated: 2022/05/31 18:55:22 by enunez-n         ###   ########.fr       */
+/*   Updated: 2022/06/01 07:22:35 by enunez-n         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,6 @@ int	ft_basehexa(unsigned long long num, int up)
 		ft_putchar_fd("0123456789ABCDEF"[num % 16], 1);
 		count++;
 	}
-	printf("\ncount: %i", count);
+	//printf("\ncount: %i", count);
 	return (count);
 }
