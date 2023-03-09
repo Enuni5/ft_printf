@@ -1,4 +1,4 @@
-SRC = ft_printf.c printchars.c printdigits.c printhexa.c ../libft/ft_putchar_fd.c ../libft/ft_putstr_fd.c ../libft/ft_putnbr_fd.c ../libft/ft_strlen.c
+SRC = ft_printf.c printchars.c printdigits.c printhexa.c libft/ft_putchar_fd.c libft/ft_putstr_fd.c libft/ft_putnbr_fd.c libft/ft_strlen.c
 
 OBJS = ${SRC:.c=.o}
 
